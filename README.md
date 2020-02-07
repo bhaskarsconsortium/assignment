@@ -1,6 +1,8 @@
 # Assignment
 A repository with the solutions that were part of the assessment
-![picture](AWS Sample Architecture.jpg)
+
+## Sample AWS Architecture:
+![picture](https://github.com/bhaskarsconsortium/assignment/blob/master/AWS%20Sample%20Architecture.jpg)
 
 ### Installation on ansible
 
