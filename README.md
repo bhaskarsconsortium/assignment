@@ -75,13 +75,13 @@ Install Ansible with the command
 ```sh
 $ sudo apt install ansible -y
 ```
-Once the playbook is installed create the YAML extension files to create the playbooks using the below command,
+Once Ansible is installed create the YAML extension file to create the playbooks using the below command,
 ```sh
 $ sudo vim file1.yml
 ```
-Click on I for Insert and copy paste the contents of the Playbook - []  into the file. Press esc and Wq to save the file.
+Click on I for Insert and copy paste the contents of the Playbook - [installation-withoutmysql.yml]  into the file. Press esc and Wq to save the file.
 
-Create a directory called Templates in the Root folder and similarly create another file - Tomcat Configurtion under it. This file will contain the required config for Tomcat Service. Make sure your file location is correct in the Copy Tomcat service from local to remote section of the playbook under SRC.
+Create a directory called Templates in the Root folder and similarly create another file - Tomcat Configurtion under it. This file will contain the required config for Tomcat Service. Copy the contents of the file Tomcat Services into the fileMake sure your file location is correct in the Copy Tomcat service from local to remote section of the playbook under SRC.
 
 To run the playbook 
 
