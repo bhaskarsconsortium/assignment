@@ -79,7 +79,7 @@ Once the playbook is installed create the YAML extension files to create the pla
 ```sh
 $ sudo vim file1.yml
 ```
-Click on I for Insert and copy paste the contents of the Playbook -  into the file. Press esc and Wq to save the file.
+Click on I for Insert and copy paste the contents of the Playbook - []  into the file. Press esc and Wq to save the file.
 
 Create a directory called Templates in the Root folder and similarly create another file - Tomcat Configurtion under it. This file will contain the required config for Tomcat Service. Make sure your file location is correct in the Copy Tomcat service from local to remote section of the playbook under SRC.
 
