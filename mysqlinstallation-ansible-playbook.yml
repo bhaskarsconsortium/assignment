@@ -1,0 +1,34 @@
+---
+- hosts: localhost
+  vars:
+    mysql_root_password: good
+  become_method: sudo
+  remote_user: ubuntu
+  tasks:
+  - name: Install MySQL
+    apt: name={{ item }} update_cache=yes cache_valid_time=3600 state=present
+    with_items:
+    - python-mysqldb
+    - mysql-server
+  #- name: copy cnf
+  #  copy: src=.my.cnf dest=~/.my.cnf owner=ubuntu mode=0644
+  #  sudo: yes
+  - name: Start the MySQL service
+    service: 
+      name: mysql 
+      state: started
+      enabled: true
+  - name: update mysql root password for all root accounts
+    mysql_user: 
+      name: root 
+      host: "{{ item }}" 
+      password: "{{ mysql_root_password }}"
+      login_user: root
+      login_password: "{{ mysql_root_password }}"
+      check_implicit_admin: yes
+      priv: "*.*:ALL,GRANT"
+    with_items:
+      - "{{ ansible_hostname }}"
+      - 127.0.0.1
+      - ::1
+      - localhost 
