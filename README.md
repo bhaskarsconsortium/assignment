@@ -92,6 +92,7 @@ To run the playbook
  $ ansible-playbook file1.yml
  ```
  The output of the playbook execution will be like below :
+ ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Ansible%20-%20File%201%20playbok%20output.JPG)
  
  
  Take the Public IP of the instance and verify the Apache Webserver Homepage as below : <public-ip>:80
