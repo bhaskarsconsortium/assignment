@@ -18,16 +18,17 @@
       state: present
 
   - name: install apache2
-    apt:
-      name: apache2
-      update_cache: yes
+    apt: 
+      name: apache2 
+      update_cache: yes 
       state: latest
 
   - name: enabled mod_rewrite
-    apache2_module:
-      name: rewrite
+    apache2_module: 
+      name: rewrite 
       state: present
-    notify: restart apache2
+    notify:
+      - restart apache2
 
   - name: add tomcat group
     group:
@@ -40,7 +41,7 @@
       home: /user/share/tomcat
       createhome: no
 
- - name: create /opt/tomcat directory
+  - name: create /opt/tomcat directory
     file:
       path: /opt/tomcat
       state: directory
@@ -62,6 +63,12 @@
       recurse: yes
       state: directory
 
+  - name: Copy Tomcat service from local to remote
+    copy:
+       src: templates/tomcat.service
+       dest: /etc/systemd/system/tomcat.service
+       mode: 0755
+
   - name: Start and enable Tomcat service
     systemd:
       name: tomcat
@@ -71,6 +78,5 @@
 
   handlers:
     - name: restart apache2
-      service:
-            name: apache2
-            state: restarted
+      service: name=apache2 
+      state: restarted
