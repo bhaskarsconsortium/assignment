@@ -22,7 +22,7 @@ Based on their priorities and internal discussions, they have provided you with 
 
 ## Solution - AWS Architecture:
 
-![picture](https://github.com/bhaskarsconsortium/assignment/blob/master/AWS%20Sample%20Architecture.jpg)
+![picture](https://github.com/bhaskarsconsortium/assignment/blob/master/AWS%20Architecture%20-%20Final.jpg)
 
 The Above architecture encapsulates all the needs that were required by Symbiosis. While architecting the solution, giving emphasis to the cost, have desinged a bare minimum deployement which would suffice the requirements of the cusotmer and have called out a few elements as optional. These services in the architecture will improve the customer experience largely and will also help us with the cost optmization of the larger deployment. A brief explanation of the architecture given below.
 
@@ -48,12 +48,43 @@ The Above architecture encapsulates all the needs that were required by Symbiosi
     
     - The Cloud formation service could be used to automate the creation of the resources required for the deployment.
   
+# Challenge 2!
 
+Write an Ansilbe script to install Apache Webserver, Tomcat Application Server, MySQL Database Server and Oracle JDK softwares.
 
-### Installation on ansible
+I have written two playbooks to achieve this requirement treating it to be a two tier Architecture. First playbook will install Apache, Tomcat and JDK softwares and the Second playbook will install the MySQL software completing the stack. I have used ubuntu platform to run the playbooks by provisioning a Ubuntu AWS EC2 Instance to run and have run the playbooks locally on the EC2 instance. The AWS EC2 Instance was provisioned in a Public Subnet with SSH - Port 22 , HTTP - Port 80 allowing access from Internet - "0.0.0.0/0".
 
-First in the VM install ansible using the below command
+Once the EC2 instance was provisioned the first step was to install Ansible.
 
+### Installation on Ansible
+
+Check for updates available for the server
+
+```sh
+$ sudo apt upgrade -y
+```
+Install the necessary repository with the command 
+```sh
+sudo apt-add-repository ppa:ansible/ansible.
+```
+Update apt with the command 
+```sh
+sudo apt update
+```
+Install Ansible with the command
 ```sh
 $ sudo apt install ansible -y
 ```
+Once the playbook is installed create the YAML extension files to create the playbooks using the below command,
+```sh
+$ sudo vim file1.yml
+```
+Click on I for Insert and copy paste the contents of the Playbook -  into the file. Press esc and Wq to save the file.
+
+Create a directory called Templates in the Root folder and similarly create another file - Tomcat Configurtion under it. This file will contain the required config for Tomcat Service. Make sure your file location is correct in the Copy Tomcat service from local to remote section of the playbook under SRC.
+
+To run the playbook 
+
+```sh
+ $ ansible-playbook file1.yml
+ ```
