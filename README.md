@@ -61,15 +61,15 @@ Once the EC2 instance was provisioned the first step was to install Ansible.
 Check for updates available for the server
 
 ```sh
-$ sudo apt upgrade -y
+$ sudo apt update
 ```
-Install the necessary repository with the command 
+Set the Software Properties 
 ```sh
-sudo apt-add-repository ppa:ansible/ansible.
+udo apt install software-properties-common
 ```
-Update apt with the command 
+Add Ansible repository 
 ```sh
-sudo apt update
+sudo apt-add-repository --yes --update ppa:ansible/ansible
 ```
 Install Ansible with the command
 ```sh
@@ -81,7 +81,7 @@ $ sudo vim file1.yml
 ```
 Click on I for Insert and copy paste the contents of the Playbook - [installation-withoutmysql.yml]  into the file. Press esc and Wq to save the file.
 
-Create a directory called Templates in the Root folder and similarly create another file - Tomcat Configurtion under it. This file will contain the required config for Tomcat Service. Copy the contents of the file Tomcat Services into the fileMake sure your file location is correct in the Copy Tomcat service from local to remote section of the playbook under SRC.
+Create a directory called Templates in the Root folder and similarly create another file - Tomcat Service under it. This file will contain the required config for Tomcat Service. Copy the contents of the file Tomcat Services into the fileMake sure your file location is correct in the Copy Tomcat service from local to remote section of the playbook under SRC.
 
 To run the playbook 
 
