@@ -75,16 +75,53 @@ Install Ansible with the command
 ```sh
 $ sudo apt install ansible -y
 ```
+I have explicity allowed the Ports - 80, 8080 and 3306 in the Security Group configuration of the instance. You could also disable the firewall in the Ec2 Instance before the execution of the playbooks. If not even though the Playbook execution might be successful the desired result may not be achieved.
+
 Once Ansible is installed create the YAML extension file to create the playbooks using the below command,
 ```sh
 $ sudo vim file1.yml
 ```
 Click on I for Insert and copy paste the contents of the Playbook - [installation-withoutmysql.yml]  into the file. Press esc and Wq to save the file.
 
-Create a directory called Templates in the Root folder and similarly create another file - Tomcat Service under it. This file will contain the required config for Tomcat Service. Copy the contents of the file Tomcat Services into the fileMake sure your file location is correct in the Copy Tomcat service from local to remote section of the playbook under SRC.
+Dependency:
+Create a directory called Templates in the Root folder and similarly create another file - Tomcat Service under it. This should be a text file and not a YAML file and will contain the required config for Tomcat Service. Copy the contents of the file Tomcat Services into the fileMake sure your file location is correct in the Copy Tomcat service from local to remote section of the playbook under SRC.
 
 To run the playbook 
 
 ```sh
  $ ansible-playbook file1.yml
  ```
+ The output of the playbook execution will be like below :
+ 
+ 
+ Take the Public IP of the instance and verify the Apache Webserver Homepage as below : <public-ip>:80
+  
+  
+ Take the Public IP of the instance and verify the Tomcat application server Homepage as below : <public-ip>:8080
+ 
+Similar to the above steps for installing the MySQL Database on to server, please create another file by the name of your choice in YAML and copy the contents of MySQL Ansible Playbook into it. Please run the playbook.
+
+```sh
+ $ ansible-playbook file5.yml
+ ```
+
+ The output of the playbook execution will be like below :
+ 
+ 
+ Verify the MySQL installation by logining into the MySQL Database Service as below:
+ 
+ 
+ Screen grabs of the outputs for the Other Tasks/commands provided in the Challange :
+ 
+ Nslookup www.gooogle.com
+ 
+ Curl https://www.google.com
+ 
+ telnet localhost 80
+ 
+ telnet localhost 8080
+ 
+ telnet localhost 3306
+ 
+ 
+ 
