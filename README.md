@@ -63,13 +63,13 @@ Check for updates available for the server
 ```sh
 $ sudo apt update
 ```
-Set the Software Properties 
+Set the Software Properties
 ```sh
-udo apt install software-properties-common
+$ sudo apt install software-properties-common
 ```
 Add Ansible repository 
 ```sh
-sudo apt-add-repository --yes --update ppa:ansible/ansible
+$ sudo apt-add-repository --yes --update ppa:ansible/ansible
 ```
 Install Ansible with the command
 ```sh
@@ -92,14 +92,19 @@ To run the playbook
  $ ansible-playbook file1.yml
  ```
  The output of the playbook execution will be like below :
- ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Ansible%20-%20File%201%20playbok%20output.JPG)
  
- 
+  ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Ansible%20-%20File%201%20playbok%20output.JPG)
+  
+  
  Take the Public IP of the instance and verify the Apache Webserver Homepage as below : "public-ip":80
+ 
   ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Apache%20Home%20Page%20-%20Ansible%20Playbook.JPG)
   
+  
  Take the Public IP of the instance and verify the Tomcat application server Homepage as below : "public-ip":8080
+ 
  ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Tomcat%20Home%20Page%20-%20Ansible%20Playbook.JPG)
+ 
  
 Similar to the above steps for installing the MySQL Database on to server, please create another file by the name of your choice in YAML and copy the contents of MySQL Ansible Playbook into it. Please run the playbook.
 
@@ -108,21 +113,26 @@ Similar to the above steps for installing the MySQL Database on to server, pleas
  ```
 
  The output of the playbook execution will be like below :
+ 
  ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/MySQL%20Playbook%20Ouput.JPG)
  
+ 
  Verify the MySQL installation by logining into the MySQL Database Service as below:
+ 
  ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/MySQL%20Login%20page.JPG)
- 
- 
+  
  Screen grabs of the outputs for the Other Tasks/commands provided in the Challange :
  
  Nslookup www.gooogle.com,  telnet localhost 80,  telnet localhost 8080
+ 
  ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Challange%202%20Commands%20-%20Output.JPG)
   
  Curl https://www.google.com
+ 
  ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Challange%202%20Commands%20-%20Output%202.JPG)
 
  telnet localhost 3306
+ 
  ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Challange%202%20Commands%20-%20Output%203.JPG)
  
  
