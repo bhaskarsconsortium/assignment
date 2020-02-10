@@ -171,5 +171,54 @@ Now that we have all the components we will begin the minikube configuration. Pl
 ```sh
 C:/Kubernetes> minikube.exe start --vm-driver=virtualbox
 ```
+
+ This would automatically start the minikube VM creation in Virtual Box and will also initialize the Kubectl for you. You could start using Minikube.
  
- Constraint : My Laptop had less disk space which did not 
+ Deploying nginxdemos/hello app in the Kubernetes cluster created : 
+ 
+ ```sh
+  kubectl create deployment hello-kube --image=nginxdemos/hello
+  ```
+  Output will be something similar to this :
+  
+  ```sh
+  deployment.apps/hello-kube created
+  ```
+  
+ To access the hello-kube Deployment, expose it as a Service:
+
+```sh
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+```
+
+The option --type=NodePort specifies the type of the Service.
+
+The output is similar to this:
+
+```sh
+service/hello-minikube exposed
+```
+
+The hello-minikube Pod is now launched but you have to wait until the Pod is up before accessing it via the exposed Service.
+
+Check if the Pod is up and running:
+
+```sh
+kubectl get pod
+```
+If the output shows the STATUS as Running, the Pod is now up and running. Get the URL of the exposed Service to view the Service details:
+
+```sh
+minikube service hello-minikube --url
+```
+Copy and paste the URL you got as the output, on your browser to view the Application Deployed.
+
+For Installing and Setup of minikube in Linux Distro's please refer to the links below. Once minikube is setup please use the same commands as mentioned above for App deployment.
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+Constraint : Since my Laptop had less disk space which did not allow me to go beyond a point, created a Ubuntu Distro AWS EC2 instance to complete this assignment. Also used the image nginxdemos/hello:plain text image since it is the Linux Distro. Attaching the screen shots for the App deployment below:
+
+
+
