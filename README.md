@@ -220,5 +220,19 @@ https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 Constraint : Since my Laptop had less disk space which did not allow me to go beyond a point, created a Ubuntu Distro AWS EC2 instance to complete this assignment. Also used the image nginxdemos/hello:plain text image since it is the Linux Distro. Attaching the screen shots for the App deployment below:
 
+Create Kub8 Deployment 
 
+![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Kubernetes%20Screenshots/Minikube%20-%20Create%20deployment.JPG)
+
+Kubectl get all
+
+![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Kubernetes%20Screenshots/Minikube%20-%20Kubectl%20get%20all.JPG)
+
+Minikube Service Expose
+
+![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Kubernetes%20Screenshots/Minikube%20-%20Service%20Expose.JPG)
+
+Minikube URL Output
+
+![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Kubernetes%20Screenshots/Minikube%20-%20URL%20Output.JPG)
 
