@@ -2,7 +2,7 @@
 
 Please find below the solutions to the problems given part of the assignment
 
-# Challenge 1!
+# Challenge 1
 
 Symbiosis is a health product manufacturing company and currently on-premises infrastructure. They have recognized the benefits of moving to a cloud infrastructure & would like to evaluate an AWS cloud solution.
 
@@ -48,7 +48,7 @@ The Above architecture encapsulates all the needs that were required by Symbiosi
     
     - The Cloud formation service could be used to automate the creation of the resources required for the deployment.
   
-# Challenge 2!
+# Challenge 2
 
 Write an Ansilbe script to install Apache Webserver, Tomcat Application Server, MySQL Database Server and Oracle JDK softwares.
 
@@ -136,4 +136,40 @@ Similar to the above steps for installing the MySQL Database on to server, pleas
  ![Picture](https://github.com/bhaskarsconsortium/assignment/blob/master/Screenshots/Challange%202%20Commands%20-%20Output%203.JPG)
  
  
+ # Challange 3
  
+ Write the k8 config required to deploy a basic nginx webserver with this image nginxdemos/hello, using minikube to provision your cluster control plane.
+ 
+ Install and Setup of minikube in Windows Laptop with Oracle Virtual Box :
+ 
+ Before you could begin, make sure your virtualization is enabled in your Laptop. To verify that given systeminfo in the Command Prompt. If the Output says A hypervisor has been detected you coul safely move on to the next step. If the desired ouput is not received, enable Hardware Virtualizaiton in the BIOS Settings and try again.
+ 
+ 1) Installation of Oracle Virtual Box :
+ 
+ Download and install the Oracle Virutal Box software by selecting Windows hosts in the address - https://www.virtualbox.org/wiki/Downloads
+ 
+ 2) Download of Kubectl :
+ 
+Download the latest release v1.17.0 from this link - https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/windows/amd64/kubectl.exe
+
+Or if you have curl installed, use this command:
+
+```sh
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/windows/amd64/kubectl.exe
+```
+
+To find out the latest stable version (for example, for scripting), take a look at https://storage.googleapis.com/kubernetes-release/release/stable.txt.
+
+Save the .exe file by creating a Folder by name Kubernets in C:/ Drive.
+
+3) Download of Minikube : 
+
+We will manually download minikube-windows-amd64 from the link https://github.com/kubernetes/minikube/releases/tag/v1.7.2 and rename it to minikube.exe. We will add this exe also to the Kubernets in C:/ Drive.
+
+Now that we have all the components we will begin the minikube configuration. Please execute the below command in the command prompt,
+
+```sh
+C:/Kubernetes> minikube.exe start --vm-driver=virtualbox
+```
+ 
+ Constraint : My Laptop had less disk space which did not 
